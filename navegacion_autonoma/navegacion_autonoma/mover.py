@@ -105,30 +105,30 @@ class MoveActionServer(Node):
             d_objetivo = 0
             #Orientar derecha
             if paso == 'D':
-                th_objetivo = 279
+                th_objetivo = 336
                 d_objetivo = 0.6
             #Orientar izquierda
             elif paso == 'I':
-                th_objetivo = 93
+                th_objetivo = 160
                 d_objetivo = 0.6
             #Orientar norte
             elif paso == 'N':
-                th_objetivo = 11
+                th_objetivo = 67
                 d_objetivo = 0.8
             #Orientar sur
             elif paso == 'S':
-                th_objetivo = 186
+                th_objetivo = 248
                 d_objetivo = 0.8
             
             #Girar cantidad de grados 
             move_cmd = Twist()
             thi = self.pose.th
             if th_objetivo - self.pose.th > 0: 
-                move_cmd.angular.z = -0.15
+                move_cmd.angular.z = 0.3
             else: 
-                move_cmd.angular.z = 0.15
+                move_cmd.angular.z = -0.3
             
-                
+            
             while abs(th_objetivo - self.pose.th) > 1:
                 self.pub.publish(move_cmd)
                 time.sleep(0.1)
@@ -146,7 +146,7 @@ class MoveActionServer(Node):
 
 
             move_cmd = Twist()
-            move_cmd.linear.x = -0.1
+            move_cmd.linear.x = -0.3
             while d < d_objetivo:
                 d = sqrt(pow(self.pose.x-x_i,2) + pow(self.pose.y-y_i,2))
                 self.pub.publish(move_cmd)
