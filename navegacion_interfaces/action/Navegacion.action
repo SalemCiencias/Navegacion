@@ -1,0 +1,6 @@
+int32 x
+int32 y
+---
+bool termino
+---
+int32 pasos_faltantes
