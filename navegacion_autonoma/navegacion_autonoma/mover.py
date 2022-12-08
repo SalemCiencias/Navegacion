@@ -106,19 +106,19 @@ class MoveActionServer(Node):
             #Orientar derecha
             if paso == 'D':
                 th_objetivo = 270
-                d_objetivo = 0.6
+                d_objetivo = 0.8
             #Orientar izquierda
             elif paso == 'I':
                 th_objetivo = 90
-                d_objetivo = 0.6
+                d_objetivo = 0.8
             #Orientar norte
             elif paso == 'N':
                 th_objetivo = 0
-                d_objetivo = 0.8
+                d_objetivo = 0.6
             #Orientar sur
             elif paso == 'S':
                 th_objetivo = 180
-                d_objetivo = 0.8
+                d_objetivo = 0.6
             
             #Girar cantidad de grados 
             move_cmd = Twist()
